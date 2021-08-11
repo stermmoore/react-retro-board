@@ -1,9 +1,9 @@
-function Ticket(props) {
+function Ticket({description, id, removeTicket}) {
 
     return (
         <div>
-            <div onClick={() => props.remove(props.id)}>X</div>
-            <div>{props.description}</div>
+            <div onClick={() => removeTicket(id)}>X</div>
+            <div>{description}</div>
         </div>
     )
 }

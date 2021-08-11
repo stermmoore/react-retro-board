@@ -8,7 +8,7 @@ function BoardSection(props) {
 
     const [tickets, updateTickets] = useState(initialTickets);
 
-    function remove(id) {
+    function removeTicket(id) {
         let newTickets = tickets.filter(t => t.id !== id);
         updateTickets(newTickets);
     }
@@ -26,7 +26,7 @@ function BoardSection(props) {
     return (
         <div className="flex-child">
             <h2>{props.name}</h2>
-            {tickets.map(t => <Ticket key={t.id} {...t} remove={remove}></Ticket>)}
+            {tickets.map(t => <Ticket key={t.id} {...t} removeTicket={removeTicket}></Ticket>)}
             <AddTicket addTicket={addTicket}></AddTicket>
         </div>
     )
