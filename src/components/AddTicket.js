@@ -10,6 +10,11 @@ function AddTicket({ addTicket }) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
+        if(newTicketText.length<1)
+            return;
+
+
         addTicket(newTicketText, onAddTicketCallback)
     }
 
