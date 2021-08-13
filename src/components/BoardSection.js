@@ -1,12 +1,15 @@
 import Ticket from "./Ticket";
 import AddTicket from "./AddTicket";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { ColourThemeContext } from "../contexts/ColourThemeProvider"
+
 
 
 function BoardSection(props) {
     const initialTickets = [];
 
     const [tickets, updateTickets] = useState(initialTickets);
+    const {theme} = useContext(ColourThemeContext);
 
     function removeTicket(id) {
         let newTickets = tickets.filter(t => t.id !== id);
